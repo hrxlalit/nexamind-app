@@ -1,0 +1,35 @@
+<nav>
+  <ul *ngIf="this.isLoggedIn">
+    <li>
+      <a routerLink="dashboard" [class.activated]="currentUrl  == '/dashboard'">
+        <span>Dashboard</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="workflow" [class.activated]="currentUrl == '/workflow'">
+        <span>Workflow</span>
+      </a>
+    </li>
+  </ul>
+
+  <ul class="section-two-host">
+    <li *ngIf="this.isLoggedIn">
+      <app-search></app-search>
+    </li>
+
+    <li *ngIf="this.isLoggedIn">
+      <app-add-entity></app-add-entity>
+    </li>
+
+    <li *ngIf="this.isLoggedIn" style="margin-right:0">
+      <app-alerts></app-alerts>
+    </li>
+
+    <li>
+      <app-user-account></app-user-account>
+    </li>
+    <li>
+      <app-main-fly-out *ngIf="this.isLoggedIn"></app-main-fly-out>
+    </li>
+  </ul>
+</nav>
